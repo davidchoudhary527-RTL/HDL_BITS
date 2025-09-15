@@ -1,0 +1,25 @@
+module top_module (
+    input ring,
+    input vibrate_mode,
+    output ringer,       // Make sound
+    output motor         // Vibrate
+);
+
+    always @*
+        begin
+            if(ring)
+                begin
+                    if (vibrate_mode)
+                        motor = 1'b1;
+                    else 
+                        ringer = 1'b1;
+                end
+            else 
+                begin
+                    motor = 1'b0;
+                    ringer = 1'b0;
+                end
+        end
+    
+                    
+endmodule
